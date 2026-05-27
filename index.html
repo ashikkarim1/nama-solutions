@@ -139,7 +139,8 @@
             font-size: 1.2rem;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0, 196, 224, 0.1);
-            order: 1;
+            position: relative;
+            z-index: 10;
         }
 
         .toggle-sidebar-btn:hover {
@@ -150,6 +151,9 @@
         }
 
         .jump-to-widget {
+            position: absolute;
+            right: 70px;
+            bottom: 0;
             background: rgba(26, 31, 46, 0.95);
             backdrop-filter: blur(15px);
             border: 1px solid var(--border-color);
@@ -161,11 +165,15 @@
             max-height: 500px;
             overflow-y: auto;
             transition: all 0.3s ease;
-            order: 0;
+            opacity: 1;
+            visibility: visible;
         }
 
         .jump-to-widget.collapsed {
-            display: none;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transform: translateX(10px);
         }
 
         .jump-to-title {
