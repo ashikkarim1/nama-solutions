@@ -211,14 +211,6 @@
             color: var(--accent);
         }
 
-        /* Floating Action Buttons */
-        .floating-actions {
-            display: flex;
-            flex-direction: column;
-            gap: 2.5rem;
-            order: 2;
-        }
-
         .action-btn {
             width: 50px;
             height: 50px;
@@ -272,7 +264,7 @@
             grid-template-columns: 1fr 1fr;
             align-items: flex-start;
             gap: 4rem;
-            padding: 10rem 0 8rem;
+            padding: 10rem 4rem 8rem 4rem;
             margin-top: 4rem;
         }
 
@@ -1050,10 +1042,8 @@
             </ul>
         </div>
         <button class="toggle-sidebar-btn" id="toggleSidebarBtn" title="Toggle menu" onclick="toggleSidebar()">☰</button>
-        <div class="floating-actions">
-            <button class="action-btn" title="Chat with us" onclick="alert('Chat feature: Coming soon!')">💬</button>
-            <button class="action-btn" title="Schedule a call" onclick="openContact()">📞</button>
-        </div>
+        <button class="action-btn" title="Chat with us" onclick="alert('Chat feature: Coming soon!')">💬</button>
+        <button class="action-btn" title="Schedule a call" onclick="openContact()">📞</button>
     </div>
 
     <!-- Hero Section -->
