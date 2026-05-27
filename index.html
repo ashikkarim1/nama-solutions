@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NAMA - Enterprise Technology for the GCC</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -21,7 +21,6 @@
             --text-tertiary: #6b7280;
             --accent: #00c4e0;
             --accent-dark: #0099b8;
-            --accent-light: #00e5ff;
             --border-color: #2d3748;
         }
 
@@ -43,7 +42,7 @@
             top: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(10, 14, 26, 0.95);
+            background: rgba(15, 20, 25, 0.98);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
             padding: 1.2rem 0;
@@ -103,9 +102,8 @@
         }
 
         .nav-cta:hover {
-            background: var(--accent-light);
+            background: #00e5ff;
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0, 212, 255, 0.2);
         }
 
         .container {
@@ -120,42 +118,52 @@
             grid-template-columns: 1fr 1fr;
             align-items: flex-start;
             gap: 4rem;
-            padding: 8rem 0 6rem;
+            padding: 10rem 0 8rem;
             margin-top: 4rem;
-            min-height: 90vh;
         }
 
-        .hero-content {
-            padding-top: 3rem;
+        .hero-tagline {
+            color: var(--accent);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
 
-        .hero-content h1 {
+        .hero h1 {
             font-size: 3.8rem;
             font-weight: 700;
-            line-height: 1.15;
+            line-height: 1.1;
             margin-bottom: 1.5rem;
             letter-spacing: -0.5px;
         }
 
-        .hero-content > p {
-            font-size: 1.15rem;
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .hero-description {
+            font-size: 1.05rem;
             color: var(--text-secondary);
             line-height: 1.8;
             margin-bottom: 2.5rem;
-            max-width: 500px;
             font-weight: 300;
+            max-width: 550px;
         }
 
-        .hero-buttons {
+        .button-group {
             display: flex;
             gap: 1.5rem;
             flex-wrap: wrap;
-            margin-bottom: 3rem;
         }
 
         .btn {
-            padding: 1rem 2rem;
-            border-radius: 25px;
+            padding: 1rem 2.2rem;
+            border-radius: 30px;
             border: none;
             cursor: pointer;
             font-size: 0.95rem;
@@ -168,45 +176,44 @@
         .btn-primary {
             background: var(--accent);
             color: #000;
-            box-shadow: 0 8px 24px rgba(0, 212, 255, 0.2);
+            box-shadow: 0 8px 20px rgba(0, 196, 224, 0.2);
         }
 
         .btn-primary:hover {
-            background: var(--accent-light);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 32px rgba(0, 212, 255, 0.3);
+            background: #00e5ff;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(0, 196, 224, 0.3);
         }
 
         .btn-secondary {
             background: transparent;
-            color: var(--text-secondary);
-            border: 1.5px solid var(--border-color);
+            color: var(--text-primary);
+            border: 1.5px solid var(--text-secondary);
         }
 
         .btn-secondary:hover {
             border-color: var(--accent);
             color: var(--accent);
-            background: rgba(0, 212, 255, 0.05);
+            background: rgba(0, 196, 224, 0.05);
         }
 
         .hero-visual {
             position: relative;
-            height: 500px;
+            height: 480px;
             display: flex;
             align-items: flex-start;
             justify-content: center;
-            padding-top: 3rem;
+            padding-top: 2rem;
         }
 
-        /* Animated SVG Circle */
         .circle-container {
             position: relative;
-            width: 400px;
-            height: 400px;
+            width: 380px;
+            height: 380px;
         }
 
-        svg {
-            filter: drop-shadow(0 0 50px rgba(0, 212, 255, 0.2));
+        .circle-container svg {
+            filter: drop-shadow(0 0 40px rgba(0, 196, 224, 0.15));
         }
 
         @keyframes rotate {
@@ -215,22 +222,17 @@
         }
 
         .rotating-circle {
-            animation: rotate 20s linear infinite;
+            animation: rotate 25s linear infinite;
         }
 
         /* Stats */
         .hero-stats {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            gap: 2.5rem;
             margin-top: 4rem;
             padding-top: 3rem;
             border-top: 1px solid var(--border-color);
-        }
-
-        .stat {
-            display: flex;
-            flex-direction: column;
         }
 
         .stat-number {
@@ -246,40 +248,97 @@
             font-weight: 400;
         }
 
-        /* Section */
+        /* Sections */
         section {
             padding: 8rem 0;
+            border-top: 1px solid var(--border-color);
         }
 
-        section.hero {
-            padding: 8rem 0 6rem;
+        .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .section-tagline {
+            color: var(--accent);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .section-title {
-            font-size: 3.2rem;
+            font-size: 3rem;
             font-weight: 700;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.5rem;
             letter-spacing: -0.5px;
         }
 
         .section-subtitle {
             font-size: 1.1rem;
             color: var(--text-secondary);
-            max-width: 700px;
-            margin-bottom: 4rem;
+            max-width: 650px;
             font-weight: 300;
             line-height: 1.8;
         }
 
-        /* Services */
-        .services {
-            background: var(--bg-secondary);
+        /* Service Showcase */
+        .service-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: flex-start;
+            padding: 5rem 0;
+            border-bottom: 1px solid var(--border-color);
         }
 
+        .showcase-content h3 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            line-height: 1.2;
+        }
+
+        .showcase-content .tagline {
+            color: var(--accent);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .showcase-content p {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .showcase-visual {
+            position: relative;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(0, 196, 224, 0.08), rgba(0, 196, 224, 0.02));
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .showcase-visual svg {
+            width: 100%;
+            height: 100%;
+            max-width: 320px;
+            max-height: 320px;
+        }
+
+        /* Services Grid */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            gap: 2.5rem;
+            margin-top: 3rem;
         }
 
         .service-card {
@@ -289,9 +348,6 @@
             border-radius: 12px;
             transition: all 0.3s ease;
             position: relative;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
         }
 
         .service-card::before {
@@ -309,7 +365,7 @@
 
         .service-card:hover {
             border-color: var(--accent);
-            background: rgba(0, 212, 255, 0.05);
+            background: rgba(0, 196, 224, 0.05);
             transform: translateY(-5px);
         }
 
@@ -322,9 +378,9 @@
             margin-bottom: 1.5rem;
         }
 
-        .service-card h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
+        .service-card h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
             margin-bottom: 1rem;
         }
 
@@ -335,144 +391,7 @@
             font-weight: 300;
         }
 
-        /* About */
-        .about {
-            background: var(--bg-primary);
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: flex-start;
-        }
-
-        .about h2 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1.8rem;
-            line-height: 1.2;
-            letter-spacing: -0.5px;
-        }
-
-        .about p {
-            color: var(--text-secondary);
-            font-size: 1.05rem;
-            line-height: 1.8;
-            margin-bottom: 1.8rem;
-            font-weight: 300;
-        }
-
-        .about-visual {
-            position: relative;
-            height: 450px;
-            background: linear-gradient(135deg, rgba(0, 196, 224, 0.08), rgba(0, 196, 224, 0.02));
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .about-visual svg {
-            width: 100%;
-            height: 100%;
-            max-width: 350px;
-            max-height: 350px;
-        }
-
-        /* Solutions */
-        .solutions {
-            background: var(--bg-secondary);
-        }
-
-        .solutions-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2.5rem;
-        }
-
-        .solution-card {
-            background: var(--bg-tertiary);
-            border: 1px solid var(--border-color);
-            padding: 2.5rem;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            border-left: 3px solid var(--accent);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .solution-card:hover {
-            background: rgba(0, 212, 255, 0.05);
-            transform: translateX(8px);
-        }
-
-        .solution-card h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .solution-card p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.7;
-            font-weight: 300;
-        }
-
-        /* Capabilities */
-        .capabilities {
-            background: var(--bg-primary);
-        }
-
-        .capabilities-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-        }
-
-        .capability-card {
-            text-align: left;
-            padding: 2.5rem;
-            background: var(--bg-tertiary);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        .capability-card:hover {
-            border-color: var(--accent);
-            background: rgba(0, 212, 255, 0.05);
-        }
-
-        .capability-icon {
-            font-size: 2.2rem;
-            margin-bottom: 1.2rem;
-        }
-
-        .capability-card h4 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .capability-card p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.7;
-            font-weight: 300;
-        }
-
         /* Resources */
-        .resources {
-            background: var(--bg-secondary);
-        }
-
         .resource-tabs {
             display: flex;
             gap: 0;
@@ -486,7 +405,7 @@
             background: none;
             cursor: pointer;
             font-size: 0.95rem;
-            font-weight: 500;
+            font-weight: 600;
             color: var(--text-secondary);
             transition: all 0.3s ease;
             border-bottom: 2px solid transparent;
@@ -514,6 +433,7 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
+            margin-top: 3rem;
         }
 
         .news-card {
@@ -529,17 +449,17 @@
 
         .news-card:hover {
             border-color: var(--accent);
-            background: rgba(0, 212, 255, 0.05);
+            background: rgba(0, 196, 224, 0.05);
             transform: translateY(-5px);
         }
 
         .news-header {
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(0, 212, 255, 0.05));
+            background: linear-gradient(135deg, rgba(0, 196, 224, 0.15), rgba(0, 196, 224, 0.05));
             height: 180px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             border-bottom: 1px solid var(--border-color);
         }
 
@@ -547,10 +467,6 @@
             padding: 2.2rem;
             display: flex;
             flex-direction: column;
-            flex: 1;
-        }
-
-        .news-desc {
             flex: 1;
         }
 
@@ -598,23 +514,21 @@
             content: '→';
         }
 
-        /* CTA */
-        .cta {
+        /* CTA Section */
+        .cta-section {
             background: var(--bg-secondary);
             text-align: center;
             padding: 6rem 0;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
         }
 
-        .cta h2 {
+        .cta-section h2 {
             font-size: 3rem;
             font-weight: 700;
             margin-bottom: 1.2rem;
             letter-spacing: -0.5px;
         }
 
-        .cta p {
+        .cta-section p {
             font-size: 1.15rem;
             color: var(--text-secondary);
             margin-bottom: 2.5rem;
@@ -641,7 +555,7 @@
 
         .footer-col h4 {
             font-size: 0.85rem;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 1.5rem;
             letter-spacing: 1px;
             text-transform: uppercase;
@@ -668,6 +582,13 @@
             color: var(--accent);
         }
 
+        .footer-col p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
         .footer-bottom {
             border-top: 1px solid var(--border-color);
             padding-top: 2rem;
@@ -675,26 +596,6 @@
             color: var(--text-tertiary);
             font-size: 0.85rem;
             font-weight: 300;
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .hero {
-                grid-template-columns: 1fr;
-                min-height: auto;
-            }
-
-            .services-grid, .capabilities-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .news-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
         }
 
         /* Mobile Menu */
@@ -736,7 +637,6 @@
             background: none;
             border: none;
             color: var(--text-primary);
-            font-size: 1.5rem;
             cursor: pointer;
             z-index: 1001;
             width: 40px;
@@ -765,6 +665,7 @@
             transform: rotate(-45deg) translate(7px, -7px);
         }
 
+        /* Responsive */
         @media (max-width: 1024px) {
             nav ul {
                 display: none;
@@ -779,25 +680,24 @@
             }
 
             .hero {
-                min-height: auto;
                 gap: 2rem;
+                min-height: auto;
             }
 
             .hero-visual {
                 height: 350px;
-                padding-top: 2rem;
             }
 
-            .section-title {
-                font-size: 2.5rem;
+            .service-showcase {
+                gap: 2rem;
             }
 
-            .services-grid, .capabilities-grid {
+            .services-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .about-grid {
-                gap: 2rem;
+            .news-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .footer-grid {
@@ -820,48 +720,35 @@
             }
 
             .hero {
+                grid-template-columns: 1fr;
                 padding: 6rem 0 4rem;
                 margin-top: 3rem;
             }
 
-            .hero-content h1 {
+            .hero h1 {
                 font-size: 2rem;
-                line-height: 1.2;
             }
 
-            .hero-content > p {
-                font-size: 1rem;
+            .hero-subtitle {
+                font-size: 1.15rem;
             }
 
-            .hero-buttons {
+            .button-group {
                 flex-direction: column;
                 gap: 1rem;
             }
 
             .btn {
                 width: 100%;
-                padding: 1.2rem;
-                font-size: 1rem;
-            }
-
-            .hero-stats {
-                grid-template-columns: 1fr 1fr;
-                gap: 1.5rem;
-                margin-top: 3rem;
-                padding-top: 2rem;
-            }
-
-            .stat-number {
-                font-size: 1.8rem;
-            }
-
-            .stat-label {
-                font-size: 0.8rem;
             }
 
             .hero-visual {
                 height: 300px;
-                padding-top: 1rem;
+            }
+
+            .circle-container {
+                width: 280px;
+                height: 280px;
             }
 
             section {
@@ -869,59 +756,27 @@
             }
 
             .section-title {
-                font-size: 1.8rem;
-                margin-bottom: 1rem;
+                font-size: 2rem;
             }
 
             .section-subtitle {
                 font-size: 1rem;
-                margin-bottom: 2.5rem;
             }
 
-            .services-grid, .capabilities-grid, .news-grid {
+            .service-showcase {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
             }
 
-            .service-card, .capability-card, .news-card {
-                padding: 2rem;
-            }
-
-            .service-icon {
-                font-size: 2rem;
-            }
-
-            .about-grid {
+            .services-grid, .news-grid {
                 grid-template-columns: 1fr;
-                gap: 2rem;
             }
 
-            .about h2 {
-                font-size: 2rem;
-            }
-
-            .about p {
-                font-size: 0.95rem;
-            }
-
-            .about-visual {
+            .showcase-visual {
                 height: 300px;
-                border-radius: 12px;
-            }
-
-            .solutions-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .solution-card {
-                padding: 2rem;
             }
 
             .resource-tabs {
                 overflow-x: auto;
-                margin-bottom: 2.5rem;
-                gap: 0;
             }
 
             .resource-tab {
@@ -935,71 +790,13 @@
                 font-size: 2rem;
             }
 
-            .news-content {
-                padding: 1.8rem;
-            }
-
-            .news-source {
-                font-size: 0.7rem;
-                margin-bottom: 0.8rem;
-            }
-
-            .news-title {
-                font-size: 1rem;
-                margin-bottom: 0.8rem;
-            }
-
-            .news-desc {
-                font-size: 0.85rem;
-                margin-bottom: 1rem;
-            }
-
-            .news-link {
-                font-size: 0.85rem;
-            }
-
-            .cta {
-                padding: 4rem 0;
-            }
-
-            .cta h2 {
+            .cta-section h2 {
                 font-size: 2rem;
-            }
-
-            .cta p {
-                font-size: 1rem;
-            }
-
-            footer {
-                padding: 3rem 0 1.5rem;
             }
 
             .footer-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
-                margin-bottom: 2rem;
-            }
-
-            .footer-col h4 {
-                font-size: 0.8rem;
-            }
-
-            .footer-col a {
-                font-size: 0.85rem;
-            }
-
-            .footer-bottom {
-                font-size: 0.8rem;
-                padding-top: 1.5rem;
-            }
-
-            /* Touch-friendly targets */
-            button, a {
-                min-height: 44px;
-                min-width: 44px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
             }
         }
 
@@ -1014,140 +811,45 @@
 
             .logo {
                 font-size: 1.1rem;
-                letter-spacing: 1px;
             }
 
-            .hero {
-                padding: 5rem 0 3rem;
-                margin-top: 2.5rem;
-            }
-
-            .hero-content h1 {
-                font-size: 1.6rem;
-                line-height: 1.25;
-            }
-
-            .hero-content > p {
-                font-size: 0.9rem;
-                line-height: 1.6;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                padding: 1rem;
-                font-size: 0.9rem;
-            }
-
-            .hero-stats {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-                margin-top: 2.5rem;
-            }
-
-            .stat-number {
+            .hero h1 {
                 font-size: 1.6rem;
             }
 
-            .stat-label {
-                font-size: 0.75rem;
+            .hero-subtitle {
+                font-size: 1rem;
             }
 
             .hero-visual {
                 height: 250px;
             }
 
-            section {
-                padding: 4rem 0;
+            .circle-container {
+                width: 220px;
+                height: 220px;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
             }
 
             .section-title {
                 font-size: 1.5rem;
             }
 
-            .section-subtitle {
-                font-size: 0.95rem;
+            .cta-section h2 {
+                font-size: 1.5rem;
             }
 
-            .service-card, .capability-card, .solution-card {
+            .service-card {
                 padding: 1.5rem;
-            }
-
-            .service-icon, .capability-icon {
-                font-size: 1.8rem;
-                margin-bottom: 1rem;
-            }
-
-            .service-card h3, .capability-card h4, .solution-card h3 {
-                font-size: 1rem;
-            }
-
-            .service-card p, .capability-card p, .solution-card p {
-                font-size: 0.9rem;
-            }
-
-            .about h2 {
-                font-size: 1.6rem;
-                margin-bottom: 1.2rem;
-            }
-
-            .about p {
-                font-size: 0.9rem;
-                line-height: 1.7;
-            }
-
-            .about-visual {
-                height: 250px;
-            }
-
-            .resource-tab {
-                padding: 0.8rem 1.2rem;
-                font-size: 0.8rem;
             }
 
             .news-header {
                 height: 130px;
                 font-size: 1.8rem;
             }
-
-            .news-content {
-                padding: 1.5rem;
-            }
-
-            .news-title {
-                font-size: 0.95rem;
-            }
-
-            .news-desc {
-                font-size: 0.8rem;
-            }
-
-            .cta h2 {
-                font-size: 1.5rem;
-            }
-
-            .cta p {
-                font-size: 0.95rem;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--bg-primary);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--accent);
-            border-radius: 4px;
         }
     </style>
 </head>
@@ -1180,13 +882,15 @@
         <button class="btn btn-primary" onclick="openContact(); closeMobileMenu()">Contact Us</button>
     </div>
 
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Enterprise Transformation Redefined</h1>
-            <p>Navigating complexity. Building continuity. Enabling recovery. Consolidate and modernize your enterprise IT infrastructure across the GCC with integrated solutions from a billion-dollar-class firm.</p>
-            <div class="hero-buttons">
-                <button class="btn btn-primary" onclick="openContact()">Learn More</button>
+            <div class="hero-tagline">INTEGRATED SOLUTIONS</div>
+            <h1>Enterprise Technology Redefined</h1>
+            <div class="hero-subtitle">Navigating complexity. Building continuity. Enabling recovery.</div>
+            <p class="hero-description">Consolidate and modernize your enterprise IT infrastructure across the GCC with integrated solutions from a billion-dollar-class technology firm.</p>
+            <div class="button-group">
+                <button class="btn btn-primary" onclick="openContact()">Contact Us</button>
                 <button class="btn btn-secondary" onclick="scrollToSection('services')">Explore Services</button>
             </div>
             <div class="hero-stats">
@@ -1211,7 +915,7 @@
 
         <div class="hero-visual">
             <div class="circle-container rotating-circle">
-                <svg viewBox="0 0 400 400" width="400" height="400">
+                <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <radialGradient id="heroGrad" cx="50%" cy="50%" r="50%">
                             <stop offset="0%" style="stop-color:#00c4e0;stop-opacity:0.4"/>
@@ -1225,27 +929,19 @@
                             </feMerge>
                         </filter>
                     </defs>
-
-                    <!-- Outer rings -->
                     <circle cx="200" cy="200" r="170" fill="none" stroke="#00c4e0" stroke-width="1.5" opacity="0.3"/>
                     <circle cx="200" cy="200" r="150" fill="none" stroke="#00c4e0" stroke-width="1" opacity="0.25"/>
                     <circle cx="200" cy="200" r="130" fill="none" stroke="#00c4e0" stroke-width="1.5" opacity="0.4"/>
                     <circle cx="200" cy="200" r="110" fill="none" stroke="#00c4e0" stroke-width="1" opacity="0.3"/>
-
-                    <!-- Data flow lines -->
                     <path d="M 200 50 Q 280 100, 300 180" fill="none" stroke="#00c4e0" stroke-width="2" opacity="0.6"/>
                     <path d="M 200 50 Q 120 100, 100 180" fill="none" stroke="#00c4e0" stroke-width="2" opacity="0.6"/>
                     <path d="M 300 200 Q 280 280, 200 330" fill="none" stroke="#00c4e0" stroke-width="2" opacity="0.5"/>
                     <path d="M 100 200 Q 120 280, 200 330" fill="none" stroke="#00c4e0" stroke-width="2" opacity="0.5"/>
-
-                    <!-- Central nodes -->
                     <circle cx="200" cy="200" r="12" fill="#00c4e0" opacity="0.8"/>
                     <circle cx="280" cy="140" r="8" fill="#00c4e0" opacity="0.6"/>
                     <circle cx="120" cy="140" r="8" fill="#00c4e0" opacity="0.6"/>
                     <circle cx="280" cy="260" r="8" fill="#00c4e0" opacity="0.5"/>
                     <circle cx="120" cy="260" r="8" fill="#00c4e0" opacity="0.5"/>
-
-                    <!-- Hexagonal data structures -->
                     <g opacity="0.4">
                         <circle cx="200" cy="100" r="6" fill="none" stroke="#00c4e0" stroke-width="1.5"/>
                         <circle cx="280" cy="150" r="6" fill="none" stroke="#00c4e0" stroke-width="1.5"/>
@@ -1254,11 +950,7 @@
                         <circle cx="120" cy="250" r="6" fill="none" stroke="#00c4e0" stroke-width="1.5"/>
                         <circle cx="120" cy="150" r="6" fill="none" stroke="#00c4e0" stroke-width="1.5"/>
                     </g>
-
-                    <!-- Center glow -->
                     <circle cx="200" cy="200" r="50" fill="url(#heroGrad)" filter="url(#heroGlow)"/>
-
-                    <!-- Pulse circles -->
                     <circle cx="200" cy="200" r="60" fill="none" stroke="#00c4e0" stroke-width="1" opacity="0.2"/>
                     <circle cx="200" cy="200" r="80" fill="none" stroke="#00c4e0" stroke-width="1" opacity="0.15"/>
                 </svg>
@@ -1266,322 +958,284 @@
         </div>
     </section>
 
-    <!-- Services -->
-    <section class="services" id="services">
-        <div class="container">
-            <h2 class="section-title">Services</h2>
-            <p class="section-subtitle">Comprehensive technology solutions designed for enterprise scale and resilience</p>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">💼</div>
-                    <h3>ERP Implementation</h3>
-                    <p>End-to-end SAP and Oracle deployments with proven success across enterprise and mid-market organizations.</p>
+    <!-- ERP Implementation Showcase -->
+    <section id="services">
+        <div class="service-showcase">
+            <div class="showcase-content">
+                <div class="section-tagline">SERVICE SPOTLIGHT</div>
+                <h3>ERP Implementation</h3>
+                <p class="tagline">Real solutions. Real progress.</p>
+                <p>End-to-end SAP and Oracle enterprise resource planning deployments with proven success across the GCC. We leverage our experienced professionals, innovative technologies and global methodologies to deliver integrated solutions tailored to your unique business needs.</p>
+                <div class="button-group">
+                    <button class="btn btn-primary" onclick="openContact()">Contact Us</button>
+                    <button class="btn btn-secondary" onclick="alert('Submit your RFP here')">Submit RFP</button>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🔐</div>
-                    <h3>Cybersecurity</h3>
-                    <p>Comprehensive security strategies, threat management, and compliance frameworks protecting critical assets.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">☁️</div>
-                    <h3>Cloud & Infrastructure</h3>
-                    <p>Enterprise-grade infrastructure, cloud migration, and 24/7 managed services ensuring optimal uptime.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📊</div>
-                    <h3>CRM & Sales Software</h3>
-                    <p>Salesforce and Microsoft Dynamics implementations tailored to unique sales and customer service processes.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">⚙️</div>
-                    <h3>CPQ Solutions</h3>
-                    <p>Configure-Price-Quote platforms streamlining complex sales cycles and accelerating revenue cycles.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🚀</div>
-                    <h3>Digital Transformation</h3>
-                    <p>Strategic consulting to reimagine business models and leverage emerging technologies for advantage.</p>
-                </div>
+            </div>
+            <div class="showcase-visual">
+                <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="buildingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#00c4e0;stop-opacity:0.3"/>
+                            <stop offset="100%" style="stop-color:#00c4e0;stop-opacity:0.1"/>
+                        </linearGradient>
+                    </defs>
+                    <rect x="60" y="80" width="180" height="240" fill="url(#buildingGrad)" stroke="#00c4e0" stroke-width="2" rx="8"/>
+                    <circle cx="90" cy="110" r="8" fill="#00c4e0" opacity="0.6"/>
+                    <circle cx="130" cy="110" r="8" fill="#00c4e0" opacity="0.6"/>
+                    <circle cx="170" cy="110" r="8" fill="#00c4e0" opacity="0.6"/>
+                    <circle cx="210" cy="110" r="8" fill="#00c4e0" opacity="0.6"/>
+                    <circle cx="90" cy="150" r="8" fill="#00c4e0" opacity="0.8"/>
+                    <circle cx="130" cy="150" r="8" fill="#00c4e0" opacity="0.8"/>
+                    <circle cx="170" cy="150" r="8" fill="#00c4e0" opacity="0.8"/>
+                    <circle cx="210" cy="150" r="8" fill="#00c4e0" opacity="0.8"/>
+                    <circle cx="90" cy="190" r="8" fill="#00c4e0" opacity="0.7"/>
+                    <circle cx="130" cy="190" r="8" fill="#00c4e0" opacity="0.7"/>
+                    <circle cx="170" cy="190" r="8" fill="#00c4e0" opacity="0.7"/>
+                    <circle cx="210" cy="190" r="8" fill="#00c4e0" opacity="0.7"/>
+                    <circle cx="90" cy="230" r="8" fill="#00c4e0" opacity="0.5"/>
+                    <circle cx="130" cy="230" r="8" fill="#00c4e0" opacity="0.5"/>
+                    <circle cx="170" cy="230" r="8" fill="#00c4e0" opacity="0.5"/>
+                    <circle cx="210" cy="230" r="8" fill="#00c4e0" opacity="0.5"/>
+                    <rect x="130" y="295" width="40" height="55" fill="none" stroke="#00c4e0" stroke-width="2" rx="2"/>
+                    <circle cx="160" cy="325" r="4" fill="#00c4e0"/>
+                    <line x1="50" y1="340" x2="250" y2="340" stroke="#00c4e0" stroke-width="2" opacity="0.4"/>
+                    <line x1="70" y1="365" x2="230" y2="365" stroke="#00c4e0" stroke-width="1.5" opacity="0.3"/>
+                    <g opacity="0.6">
+                        <rect x="40" y="30" width="6" height="35" fill="#00c4e0"/>
+                        <rect x="50" y="25" width="6" height="40" fill="#00c4e0" opacity="0.8"/>
+                        <rect x="60" y="20" width="6" height="45" fill="#00c4e0" opacity="0.6"/>
+                    </g>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="section-header">
+            <div class="section-tagline">OUR CAPABILITIES</div>
+            <h2 class="section-title">Core Services</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">💼</div>
+                <h4>ERP Implementation</h4>
+                <p>End-to-end SAP and Oracle deployments with proven success across enterprise organizations.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔐</div>
+                <h4>Cybersecurity</h4>
+                <p>Comprehensive security strategies, threat management, and compliance frameworks protecting critical assets.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">☁️</div>
+                <h4>Cloud & Infrastructure</h4>
+                <p>Enterprise-grade infrastructure, cloud migration, and 24/7 managed services ensuring optimal uptime.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h4>CRM & Sales Software</h4>
+                <p>Salesforce and Microsoft Dynamics implementations tailored to unique sales and customer service processes.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">⚙️</div>
+                <h4>CPQ Solutions</h4>
+                <p>Configure-Price-Quote platforms streamlining complex sales cycles and accelerating revenue cycles.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🚀</div>
+                <h4>Digital Transformation</h4>
+                <p>Strategic consulting to reimagine business models and leverage emerging technologies for advantage.</p>
             </div>
         </div>
     </section>
 
-    <!-- About -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div>
-                    <h2>Building Tomorrow's Enterprise</h2>
-                    <p>NAMA is a Dubai-headquartered technology holding and operating company consolidating, modernizing, and scaling enterprise IT services across the Gulf Cooperation Council.</p>
-                    <p>We combine decades of expertise with institutional backing to deliver world-class solutions. With 2,300+ active clients, 80+ expert engineers, and deep capabilities spanning ERP, managed hosting, cybersecurity, and enterprise software, we deliver integrated solutions that drive real transformation.</p>
-                </div>
-                <div class="about-visual">
-                    <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="buildingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#00c4e0;stop-opacity:0.3"/>
-                                <stop offset="100%" style="stop-color:#00c4e0;stop-opacity:0.1"/>
-                            </linearGradient>
-                        </defs>
-
-                        <!-- Main structure -->
-                        <rect x="60" y="80" width="180" height="240" fill="url(#buildingGrad)" stroke="#00c4e0" stroke-width="2" rx="8"/>
-
-                        <!-- Windows -->
-                        <circle cx="90" cy="110" r="8" fill="#00c4e0" opacity="0.6"/>
-                        <circle cx="130" cy="110" r="8" fill="#00c4e0" opacity="0.6"/>
-                        <circle cx="170" cy="110" r="8" fill="#00c4e0" opacity="0.6"/>
-                        <circle cx="210" cy="110" r="8" fill="#00c4e0" opacity="0.6"/>
-
-                        <circle cx="90" cy="150" r="8" fill="#00c4e0" opacity="0.8"/>
-                        <circle cx="130" cy="150" r="8" fill="#00c4e0" opacity="0.8"/>
-                        <circle cx="170" cy="150" r="8" fill="#00c4e0" opacity="0.8"/>
-                        <circle cx="210" cy="150" r="8" fill="#00c4e0" opacity="0.8"/>
-
-                        <circle cx="90" cy="190" r="8" fill="#00c4e0" opacity="0.7"/>
-                        <circle cx="130" cy="190" r="8" fill="#00c4e0" opacity="0.7"/>
-                        <circle cx="170" cy="190" r="8" fill="#00c4e0" opacity="0.7"/>
-                        <circle cx="210" cy="190" r="8" fill="#00c4e0" opacity="0.7"/>
-
-                        <circle cx="90" cy="230" r="8" fill="#00c4e0" opacity="0.5"/>
-                        <circle cx="130" cy="230" r="8" fill="#00c4e0" opacity="0.5"/>
-                        <circle cx="170" cy="230" r="8" fill="#00c4e0" opacity="0.5"/>
-                        <circle cx="210" cy="230" r="8" fill="#00c4e0" opacity="0.5"/>
-
-                        <!-- Door -->
-                        <rect x="130" y="295" width="40" height="55" fill="none" stroke="#00c4e0" stroke-width="2" rx="2"/>
-                        <circle cx="160" cy="325" r="4" fill="#00c4e0"/>
-
-                        <!-- Accent lines -->
-                        <line x1="50" y1="340" x2="250" y2="340" stroke="#00c4e0" stroke-width="2" opacity="0.4"/>
-                        <line x1="70" y1="365" x2="230" y2="365" stroke="#00c4e0" stroke-width="1.5" opacity="0.3"/>
-
-                        <!-- Data visualization elements -->
-                        <g opacity="0.6">
-                            <rect x="40" y="30" width="6" height="35" fill="#00c4e0"/>
-                            <rect x="50" y="25" width="6" height="40" fill="#00c4e0" opacity="0.8"/>
-                            <rect x="60" y="20" width="6" height="45" fill="#00c4e0" opacity="0.6"/>
-                        </g>
-
-                        <g opacity="0.6">
-                            <rect x="240" y="35" width="6" height="30" fill="#00c4e0"/>
-                            <rect x="250" y="28" width="6" height="37" fill="#00c4e0" opacity="0.8"/>
-                            <rect x="260" y="22" width="6" height="43" fill="#00c4e0" opacity="0.6"/>
-                        </g>
-                    </svg>
-                </div>
+    <!-- Solutions Section -->
+    <section id="solutions">
+        <div class="section-header">
+            <div class="section-tagline">INDUSTRY EXPERTISE</div>
+            <h2 class="section-title">Solutions by Industry</h2>
+            <p class="section-subtitle">Purpose-built technology solutions tailored for your industry challenges and opportunities</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <h4>📱 Financial Services</h4>
+                <p>Banking, insurance, and fintech solutions delivering regulatory compliance and secure infrastructure.</p>
+            </div>
+            <div class="service-card">
+                <h4>🏭 Manufacturing</h4>
+                <p>Enterprise manufacturing systems, supply chain optimization, and IoT integration for Industry 4.0.</p>
+            </div>
+            <div class="service-card">
+                <h4>🏥 Healthcare</h4>
+                <p>HIPAA-compliant systems and patient management platforms for regional healthcare providers.</p>
+            </div>
+            <div class="service-card">
+                <h4>🛍️ Retail</h4>
+                <p>Omnichannel retail platforms, POS systems, and digital commerce solutions.</p>
+            </div>
+            <div class="service-card">
+                <h4>🏢 Enterprise</h4>
+                <p>Multi-company consolidation platforms and shared services architecture.</p>
+            </div>
+            <div class="service-card">
+                <h4>🏗️ Real Estate</h4>
+                <p>Project management systems, asset management platforms, and smart building technologies.</p>
             </div>
         </div>
     </section>
 
-    <!-- Solutions -->
-    <section class="solutions" id="solutions">
-        <div class="container">
-            <h2 class="section-title">Industry Solutions</h2>
-            <p class="section-subtitle">Tailored technology solutions purpose-built for your industry</p>
-            <div class="solutions-grid">
-                <div class="solution-card">
-                    <h3>Financial Services</h3>
-                    <p>Banking, insurance, and fintech solutions delivering regulatory compliance and secure infrastructure.</p>
+    <!-- Resources Section -->
+    <section id="resources">
+        <div class="section-header">
+            <div class="section-tagline">INDUSTRY INTELLIGENCE</div>
+            <h2 class="section-title">Resources & News</h2>
+            <p class="section-subtitle">Stay informed with curated insights from the technology and consulting sector</p>
+        </div>
+
+        <div class="resource-tabs">
+            <button class="resource-tab active" onclick="switchTab(event, 'tech-news')">Technology</button>
+            <button class="resource-tab" onclick="switchTab(event, 'gcc-news')">GCC Market</button>
+            <button class="resource-tab" onclick="switchTab(event, 'digital-news')">Digital Transformation</button>
+            <button class="resource-tab" onclick="switchTab(event, 'enterprise-news')">Enterprise IT</button>
+        </div>
+
+        <!-- Technology News -->
+        <div id="tech-news" class="resource-content active">
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-header">🤖</div>
+                    <div class="news-content">
+                        <div class="news-source">TechCrunch</div>
+                        <div class="news-title">Enterprise AI Integration Accelerates</div>
+                        <div class="news-desc">Leading organizations deploy AI to automate workflows and enhance decision-making across departments.</div>
+                        <a href="https://techcrunch.com" target="_blank" class="news-link">Read</a>
+                    </div>
                 </div>
-                <div class="solution-card">
-                    <h3>Manufacturing & Engineering</h3>
-                    <p>Enterprise manufacturing systems, supply chain optimization, and IoT integration for Industry 4.0.</p>
+                <div class="news-card">
+                    <div class="news-header">☁️</div>
+                    <div class="news-content">
+                        <div class="news-source">InfoQ</div>
+                        <div class="news-title">Cloud-Native Architecture Maturity</div>
+                        <div class="news-desc">Best practices in Kubernetes, microservices, and distributed systems for enterprise-scale applications.</div>
+                        <a href="https://www.infoq.com" target="_blank" class="news-link">Read</a>
+                    </div>
                 </div>
-                <div class="solution-card">
-                    <h3>Healthcare & Life Sciences</h3>
-                    <p>HIPAA-compliant systems and patient management platforms for regional healthcare providers.</p>
-                </div>
-                <div class="solution-card">
-                    <h3>Retail & E-Commerce</h3>
-                    <p>Omnichannel retail platforms, POS systems, and digital commerce solutions.</p>
+                <div class="news-card">
+                    <div class="news-header">🔐</div>
+                    <div class="news-content">
+                        <div class="news-source">Dark Reading</div>
+                        <div class="news-title">Zero Trust Security Adoption</div>
+                        <div class="news-desc">Enterprises transition to zero trust models for enhanced security in hybrid environments.</div>
+                        <a href="https://www.darkreading.com" target="_blank" class="news-link">Read</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Capabilities -->
-    <section class="capabilities">
-        <div class="container">
-            <h2 class="section-title">Why NAMA</h2>
-            <p class="section-subtitle">The competitive advantage of choosing NAMA for your enterprise technology transformation</p>
-            <div class="capabilities-grid">
-                <div class="capability-card">
-                    <div class="capability-icon">🎯</div>
-                    <h4>Regional Expertise</h4>
-                    <p>Deep understanding of GCC markets, regulations, and business practices.</p>
+        <!-- GCC News -->
+        <div id="gcc-news" class="resource-content">
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-header">📈</div>
+                    <div class="news-content">
+                        <div class="news-source">Gulf Business</div>
+                        <div class="news-title">UAE Digital Economy Reaches $40B</div>
+                        <div class="news-desc">Digital transformation initiatives drive unprecedented growth in regional technology investment.</div>
+                        <a href="https://www.gulf-business.com" target="_blank" class="news-link">Read</a>
+                    </div>
                 </div>
-                <div class="capability-card">
-                    <div class="capability-icon">⚡</div>
-                    <h4>Proven Track Record</h4>
-                    <p>2,300+ implementations with 15+ years of demonstrated excellence.</p>
+                <div class="news-card">
+                    <div class="news-header">🚀</div>
+                    <div class="news-content">
+                        <div class="news-source">Arabian Business</div>
+                        <div class="news-title">Saudi Arabia Tech Hub Expansion</div>
+                        <div class="news-desc">NEOM and Vision 2030 initiatives position the kingdom as a regional technology and innovation leader.</div>
+                        <a href="https://www.arabianbusiness.com" target="_blank" class="news-link">Read</a>
+                    </div>
                 </div>
-                <div class="capability-card">
-                    <div class="capability-icon">🤝</div>
-                    <h4>Integrated Solutions</h4>
-                    <p>Seamless coordination across infrastructure, applications, and consulting.</p>
-                </div>
-                <div class="capability-card">
-                    <div class="capability-icon">💡</div>
-                    <h4>Innovation-Driven</h4>
-                    <p>Continuous investment in AI, cloud, and emerging technologies.</p>
+                <div class="news-card">
+                    <div class="news-header">💼</div>
+                    <div class="news-content">
+                        <div class="news-source">MEED</div>
+                        <div class="news-title">GCC IT Services Market Growth</div>
+                        <div class="news-desc">Regional enterprise spending on IT services grows 12% annually driven by digital initiatives.</div>
+                        <a href="https://www.meed.com" target="_blank" class="news-link">Read</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Resources -->
-    <section class="resources" id="resources">
-        <div class="container">
-            <h2 class="section-title">Industry Resources</h2>
-            <p class="section-subtitle">Stay informed with curated news and insights from the technology and consulting sector</p>
-
-            <div class="resource-tabs">
-                <button class="resource-tab active" onclick="switchTab(event, 'tech-news')">Technology</button>
-                <button class="resource-tab" onclick="switchTab(event, 'gcc-news')">GCC Market</button>
-                <button class="resource-tab" onclick="switchTab(event, 'digital-news')">Digital Transformation</button>
-                <button class="resource-tab" onclick="switchTab(event, 'enterprise-news')">Enterprise IT</button>
-            </div>
-
-            <!-- Technology News -->
-            <div id="tech-news" class="resource-content active">
-                <div class="news-grid">
-                    <div class="news-card">
-                        <div class="news-header">🤖</div>
-                        <div class="news-content">
-                            <div class="news-source">TechCrunch</div>
-                            <div class="news-title">Enterprise AI Integration Accelerates</div>
-                            <div class="news-desc">Leading organizations deploy AI to automate workflows and enhance decision-making across departments.</div>
-                            <a href="https://techcrunch.com" target="_blank" class="news-link">Read</a>
-                        </div>
+        <!-- Digital Transformation -->
+        <div id="digital-news" class="resource-content">
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-header">🎯</div>
+                    <div class="news-content">
+                        <div class="news-source">Harvard Business Review</div>
+                        <div class="news-title">Building Adaptive Enterprises</div>
+                        <div class="news-desc">How organizations evolve beyond initial digital transformation to build truly adaptive businesses.</div>
+                        <a href="https://hbr.org" target="_blank" class="news-link">Read</a>
                     </div>
-                    <div class="news-card">
-                        <div class="news-header">☁️</div>
-                        <div class="news-content">
-                            <div class="news-source">InfoQ</div>
-                            <div class="news-title">Cloud-Native Architecture Maturity</div>
-                            <div class="news-desc">Best practices in Kubernetes, microservices, and distributed systems for enterprise-scale applications.</div>
-                            <a href="https://www.infoq.com" target="_blank" class="news-link">Read</a>
-                        </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-header">📊</div>
+                    <div class="news-content">
+                        <div class="news-source">McKinsey</div>
+                        <div class="news-title">State of Digital Transformation</div>
+                        <div class="news-desc">Latest research on successful DX strategies, organizational barriers, and ROI measurement.</div>
+                        <a href="https://www.mckinsey.com" target="_blank" class="news-link">Read</a>
                     </div>
-                    <div class="news-card">
-                        <div class="news-header">🔐</div>
-                        <div class="news-content">
-                            <div class="news-source">Dark Reading</div>
-                            <div class="news-title">Zero Trust Security Adoption</div>
-                            <div class="news-desc">Enterprises transition to zero trust models for enhanced security in hybrid and distributed environments.</div>
-                            <a href="https://www.darkreading.com" target="_blank" class="news-link">Read</a>
-                        </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-header">✨</div>
+                    <div class="news-content">
+                        <div class="news-source">Forrester Research</div>
+                        <div class="news-title">Digital Experience Benchmarks</div>
+                        <div class="news-desc">Customer and employee digital experience maturity benchmarks across industries.</div>
+                        <a href="https://www.forrester.com" target="_blank" class="news-link">Read</a>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- GCC News -->
-            <div id="gcc-news" class="resource-content">
-                <div class="news-grid">
-                    <div class="news-card">
-                        <div class="news-header">📈</div>
-                        <div class="news-content">
-                            <div class="news-source">Gulf Business</div>
-                            <div class="news-title">UAE Digital Economy Reaches $40B</div>
-                            <div class="news-desc">Digital transformation initiatives drive unprecedented growth in regional technology investment.</div>
-                            <a href="https://www.gulf-business.com" target="_blank" class="news-link">Read</a>
-                        </div>
-                    </div>
-                    <div class="news-card">
-                        <div class="news-header">🚀</div>
-                        <div class="news-content">
-                            <div class="news-source">Arabian Business</div>
-                            <div class="news-title">Saudi Arabia Tech Hub Expansion</div>
-                            <div class="news-desc">NEOM and Vision 2030 initiatives position the kingdom as a regional technology and innovation leader.</div>
-                            <a href="https://www.arabianbusiness.com" target="_blank" class="news-link">Read</a>
-                        </div>
-                    </div>
-                    <div class="news-card">
-                        <div class="news-header">💼</div>
-                        <div class="news-content">
-                            <div class="news-source">MEED</div>
-                            <div class="news-title">GCC IT Services Market Growth</div>
-                            <div class="news-desc">Regional enterprise spending on IT services grows 12% annually driven by digital initiatives.</div>
-                            <a href="https://www.meed.com" target="_blank" class="news-link">Read</a>
-                        </div>
+        <!-- Enterprise IT -->
+        <div id="enterprise-news" class="resource-content">
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-header">⚙️</div>
+                    <div class="news-content">
+                        <div class="news-source">Gartner</div>
+                        <div class="news-title">Enterprise Architecture Strategy</div>
+                        <div class="news-desc">Guidance on architecting systems for scale, resilience, and agility in an AI-first world.</div>
+                        <a href="https://www.gartner.com" target="_blank" class="news-link">Read</a>
                     </div>
                 </div>
-            </div>
-
-            <!-- Digital Transformation -->
-            <div id="digital-news" class="resource-content">
-                <div class="news-grid">
-                    <div class="news-card">
-                        <div class="news-header">🎯</div>
-                        <div class="news-content">
-                            <div class="news-source">Harvard Business Review</div>
-                            <div class="news-title">Building Adaptive Enterprises</div>
-                            <div class="news-desc">How organizations evolve beyond initial digital transformation to build truly adaptive businesses.</div>
-                            <a href="https://hbr.org" target="_blank" class="news-link">Read</a>
-                        </div>
-                    </div>
-                    <div class="news-card">
-                        <div class="news-header">📊</div>
-                        <div class="news-content">
-                            <div class="news-source">McKinsey</div>
-                            <div class="news-title">State of Digital Transformation</div>
-                            <div class="news-desc">Latest research on successful DX strategies, organizational barriers, and ROI measurement.</div>
-                            <a href="https://www.mckinsey.com" target="_blank" class="news-link">Read</a>
-                        </div>
-                    </div>
-                    <div class="news-card">
-                        <div class="news-header">✨</div>
-                        <div class="news-content">
-                            <div class="news-source">Forrester Research</div>
-                            <div class="news-title">Digital Experience Benchmarks 2026</div>
-                            <div class="news-desc">Customer and employee digital experience maturity benchmarks across industries.</div>
-                            <a href="https://www.forrester.com" target="_blank" class="news-link">Read</a>
-                        </div>
+                <div class="news-card">
+                    <div class="news-header">🛡️</div>
+                    <div class="news-content">
+                        <div class="news-source">Deloitte</div>
+                        <div class="news-title">Enterprise Risk & Digital Governance</div>
+                        <div class="news-desc">Managing IT risk, compliance, and governance in digital-first enterprise environments.</div>
+                        <a href="https://www2.deloitte.com/insights" target="_blank" class="news-link">Read</a>
                     </div>
                 </div>
-            </div>
-
-            <!-- Enterprise IT -->
-            <div id="enterprise-news" class="resource-content">
-                <div class="news-grid">
-                    <div class="news-card">
-                        <div class="news-header">⚙️</div>
-                        <div class="news-content">
-                            <div class="news-source">Gartner</div>
-                            <div class="news-title">Enterprise Architecture Strategy 2026</div>
-                            <div class="news-desc">Guidance on architecting systems for scale, resilience, and agility in an AI-first world.</div>
-                            <a href="https://www.gartner.com" target="_blank" class="news-link">Read</a>
-                        </div>
-                    </div>
-                    <div class="news-card">
-                        <div class="news-header">🛡️</div>
-                        <div class="news-content">
-                            <div class="news-source">Deloitte</div>
-                            <div class="news-title">Enterprise Risk & Digital Governance</div>
-                            <div class="news-desc">Managing IT risk, compliance, and governance in digital-first enterprise environments.</div>
-                            <a href="https://www2.deloitte.com/insights" target="_blank" class="news-link">Read</a>
-                        </div>
-                    </div>
-                    <div class="news-card">
-                        <div class="news-header">🔗</div>
-                        <div class="news-content">
-                            <div class="news-source">Accenture</div>
-                            <div class="news-title">Technology M&A Integration</div>
-                            <div class="news-desc">Strategic considerations for IT integration and technology consolidation in acquisitions.</div>
-                            <a href="https://www.accenture.com" target="_blank" class="news-link">Read</a>
-                        </div>
+                <div class="news-card">
+                    <div class="news-header">🔗</div>
+                    <div class="news-content">
+                        <div class="news-source">Accenture</div>
+                        <div class="news-title">Technology M&A Integration</div>
+                        <div class="news-desc">Strategic considerations for IT integration and technology consolidation in acquisitions.</div>
+                        <a href="https://www.accenture.com" target="_blank" class="news-link">Read</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA -->
-    <section class="cta">
+    <!-- CTA Section -->
+    <section class="cta-section">
         <div class="container">
             <h2>Ready to Transform?</h2>
-            <p>Join 2,300+ organizations leveraging NAMA's integrated technology solutions</p>
+            <p>Join 2,300+ organizations leveraging NAMA's integrated technology solutions for competitive advantage</p>
             <button class="btn btn-primary" onclick="openContact()">Schedule Consultation</button>
         </div>
     </section>
@@ -1592,7 +1246,7 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <h4>NAMA</h4>
-                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Enterprise technology solutions for the GCC region. Consolidating and modernizing IT services across the Middle East.</p>
+                    <p>Enterprise technology solutions for the GCC region. Consolidating and modernizing IT services across the Middle East.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Services</h4>
@@ -1653,7 +1307,6 @@
             event.target.classList.add('active');
         }
 
-        // Mobile Menu Functions
         function toggleMobileMenu() {
             const menu = document.getElementById('mobileMenu');
             const toggle = document.getElementById('menuToggle');
@@ -1668,7 +1321,6 @@
             toggle.classList.remove('active');
         }
 
-        // Close mobile menu when clicking outside
         document.addEventListener('click', function(event) {
             const nav = document.querySelector('nav');
             const menu = document.getElementById('mobileMenu');
@@ -1681,7 +1333,6 @@
             }
         });
 
-        // Close mobile menu on window resize
         window.addEventListener('resize', function() {
             if (window.innerWidth > 1024) {
                 closeMobileMenu();
