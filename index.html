@@ -112,6 +112,125 @@
             padding: 0 4rem;
         }
 
+        /* Floating Sidebar */
+        .floating-sidebar {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 900;
+            display: none;
+        }
+
+        .jump-to-widget {
+            background: rgba(26, 31, 46, 0.95);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            min-width: 200px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            animation: slideInRight 0.5s ease;
+        }
+
+        .jump-to-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .jump-to-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .jump-to-list li a {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0;
+        }
+
+        .jump-to-list li a:hover {
+            color: var(--accent);
+            padding-left: 0.5rem;
+        }
+
+        .jump-to-list li a::before {
+            content: '●';
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .jump-to-list li a:hover::before {
+            opacity: 1;
+            color: var(--accent);
+        }
+
+        /* Floating Action Buttons */
+        .floating-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .action-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(0, 196, 224, 0.15);
+            border: 1.5px solid var(--accent);
+            color: var(--accent);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 196, 224, 0.1);
+        }
+
+        .action-btn:hover {
+            background: var(--accent);
+            color: #000;
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(0, 196, 224, 0.3);
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Show floating sidebar on desktop */
+        @media (min-width: 1400px) {
+            .floating-sidebar {
+                display: block;
+            }
+        }
+
+        @media (max-width: 1400px) {
+            .floating-sidebar {
+                display: none !important;
+            }
+        }
+
         /* Hero Section */
         .hero {
             display: grid;
@@ -882,8 +1001,27 @@
         <button class="btn btn-primary" onclick="openContact(); closeMobileMenu()">Contact Us</button>
     </div>
 
+    <!-- Floating Sidebar -->
+    <div class="floating-sidebar">
+        <div class="jump-to-widget">
+            <div class="jump-to-title">Jump to:</div>
+            <ul class="jump-to-list">
+                <li><a href="#" onclick="scrollToSection('hero'); return false;">Overview</a></li>
+                <li><a href="#" onclick="scrollToSection('services'); return false;">Our Services</a></li>
+                <li><a href="#" onclick="scrollToSection('showcase'); return false;">Service Showcase</a></li>
+                <li><a href="#" onclick="scrollToSection('solutions'); return false;">Solutions</a></li>
+                <li><a href="#" onclick="scrollToSection('resources'); return false;">Resources</a></li>
+                <li><a href="#" onclick="openContact(); return false;">Get in Touch</a></li>
+            </ul>
+        </div>
+        <div class="floating-actions">
+            <button class="action-btn" title="Chat with us" onclick="alert('Chat feature: Coming soon!')">💬</button>
+            <button class="action-btn" title="Schedule a call" onclick="openContact()">📞</button>
+        </div>
+    </div>
+
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="hero-content">
             <div class="hero-tagline">INTEGRATED SOLUTIONS</div>
             <h1>Enterprise Technology Redefined</h1>
@@ -960,7 +1098,7 @@
 
     <!-- ERP Implementation Showcase -->
     <section id="services">
-        <div class="service-showcase">
+        <div class="service-showcase" id="showcase">
             <div class="showcase-content">
                 <div class="section-tagline">SERVICE SPOTLIGHT</div>
                 <h3>ERP Implementation</h3>
