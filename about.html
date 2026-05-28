@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - NAMA - Enterprise Technology for the GCC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0f1419;
+            --bg-secondary: #1a1f2e;
+            --bg-tertiary: #232b3a;
+            --text-primary: #ffffff;
+            --text-secondary: #9ca3af;
+            --text-tertiary: #6b7280;
+            --accent: #00c4e0;
+            --accent-dark: #0099b8;
+            --border-color: #2d3748;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(15, 20, 25, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.2rem 0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 4rem;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .logo:hover {
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .nav-cta {
+            background: var(--accent);
+            color: #000 !important;
+            padding: 0.7rem 1.8rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .nav-cta:hover {
+            background: #00e5ff;
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 4rem;
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 8rem 0 4rem;
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Founder Section */
+        .founder-section {
+            padding: 6rem 0;
+        }
+
+        .founder-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .founder-image {
+            position: relative;
+        }
+
+        .founder-image img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 196, 224, 0.2);
+            border: 2px solid var(--border-color);
+        }
+
+        .founder-image::after {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            border: 2px solid var(--accent);
+            border-radius: 16px;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .founder-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        .founder-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+        }
+
+        .founder-bio {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .highlight-box {
+            background: rgba(0, 196, 224, 0.08);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .highlight-box strong {
+            color: var(--accent);
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: rgba(26, 31, 46, 0.5);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            background: rgba(0, 196, 224, 0.08);
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* Expertise Grid */
+        .expertise-section {
+            padding: 6rem 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-tagline {
+            color: var(--accent);
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .expertise-card {
+            background: rgba(26, 31, 46, 0.5);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .expertise-card:hover {
+            background: rgba(0, 196, 224, 0.08);
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .expertise-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .expertise-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .expertise-card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Credentials Section */
+        .credentials-section {
+            padding: 6rem 0;
+        }
+
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+        }
+
+        .credential-category {
+            background: rgba(26, 31, 46, 0.5);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 12px;
+        }
+
+        .credential-category h3 {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        .credential-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .credential-item::before {
+            content: '✓';
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .credential-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Journey Timeline */
+        .journey-section {
+            padding: 6rem 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--accent) 0%, transparent 100%);
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+            width: 48%;
+        }
+
+        .timeline-item:nth-child(odd) {
+            margin-left: 0;
+            text-align: right;
+            padding-right: 4%;
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-left: 52%;
+            padding-left: 4%;
+        }
+
+        .timeline-content {
+            background: rgba(26, 31, 46, 0.5);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::after,
+        .timeline-item:nth-child(even) .timeline-content::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+            top: 2rem;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            right: -30px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::after {
+            left: -30px;
+        }
+
+        .timeline-role {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-company {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-dates {
+            color: var(--text-tertiary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(0, 196, 224, 0.1) 0%, rgba(0, 115, 170, 0.05) 100%);
+            border: 1px solid var(--border-color);
+            padding: 4rem;
+            border-radius: 16px;
+            text-align: center;
+            margin: 6rem 0;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            padding: 1rem 2.2rem;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #000;
+            box-shadow: 0 8px 20px rgba(0, 196, 224, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: #00e5ff;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(0, 196, 224, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            padding: 4rem 0 2rem;
+            margin-top: 6rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-col a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col a:hover {
+            color: var(--accent);
+        }
+
+        .footer-col p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-tertiary);
+            font-size: 0.85rem;
+            font-weight: 300;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .founder-container,
+            .expertise-grid,
+            .credentials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                display: none;
+            }
+
+            .timeline-item {
+                width: 100%;
+                margin-left: 0 !important;
+                text-align: left !important;
+                padding: 0 !important;
+            }
+
+            .timeline-content::after {
+                display: none !important;
+            }
+
+            nav .container {
+                padding: 0 2rem;
+            }
+
+            .container {
+                padding: 0 2rem;
+            }
+
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .founder-title {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1.5rem;
+                display: none;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .stats-grid,
+            .expertise-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .founder-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .cta-section {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo" onclick="window.location.href='index.html'">NAMA</div>
+            <ul>
+                <li><a onclick="window.location.href='index.html'">Services</a></li>
+                <li><a onclick="window.location.href='index.html'">Solutions</a></li>
+                <li><a onclick="window.location.href='index.html'">Resources</a></li>
+                <li><a onclick="window.location.href='about.html'">About</a></li>
+            </ul>
+            <button class="btn btn-primary" onclick="alert('Contact us:\n\nEmail: sales@nama-solutions.com\nPhone: +971-4-XXXXX\n\nDubai Office\nUnited Arab Emirates')">Contact</button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Meet Our Leadership</h1>
+            <p>Driving innovation and transformation in enterprise technology across the GCC region</p>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="founder-section">
+        <div class="container">
+            <div class="founder-container">
+                <div class="founder-image">
+                    <img src="https://via.placeholder.com/500x600/1a1f2e/00c4e0?text=Anand+Negi" alt="Anand Negi, Founder & CEO">
+                </div>
+                <div class="founder-content">
+                    <h2>Anand Negi</h2>
+                    <div class="founder-title">Founder & Chief Executive Officer</div>
+
+                    <p class="founder-bio">
+                        Anand is a visionary leader with over 15 years of experience in enterprise technology, financial management, and digital transformation. As CEO of NAMA Integrated Solutions, he leads a team of technical professionals to assist businesses with complex technology transitions and organizational change management.
+                    </p>
+
+                    <div class="highlight-box">
+                        <strong>Tier-1 Software Expertise:</strong> Former CFO at Sage Software Middle East (LSE-listed market leader in SME business solutions), where he drove financial excellence, operational transformation, and growth across the region.
+                    </div>
+
+                    <div class="highlight-box">
+                        <strong>Proven Track Record:</strong> Successfully executed enterprise integrations, managed multi-country operations, and led high-performing teams through transformational change across finance, operations, and technology implementations.
+                    </div>
+
+                    <p class="founder-bio">
+                        Anand's expertise spans strategic planning, change management, and value creation. He is passionate about leveraging emerging technologies—ERP, CRM, HRMS, and beyond—to solve complex business challenges and position organizations for sustainable growth in an evolving technological landscape.
+                    </p>
+
+                    <!-- Stats -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">Years of Experience</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">Global</div>
+                            <div class="stat-label">Scale Operations</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">Certified</div>
+                            <div class="stat-label">Management Accountant</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section class="expertise-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tagline">CORE COMPETENCIES</div>
+                <h2 class="section-title">Areas of Excellence</h2>
+            </div>
+
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <div class="expertise-icon">💼</div>
+                    <h3>Enterprise Transformation</h3>
+                    <p>Expertise in guiding organizations through complex digital transformations, including ERP, CRM, and HRMS implementations with proven change management methodologies.</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon">🏆</div>
+                    <h3>Tier-1 Software Leadership</h3>
+                    <p>Deep experience with market-leading solutions like Sage, combined with knowledge of integration best practices and vendor ecosystem management across global operations.</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon">📊</div>
+                    <h3>Financial & Operational Excellence</h3>
+                    <p>Strategic focus on business process optimization, control improvement, and driving sustainable growth while maintaining SOX compliance and operational discipline.</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon">🌍</div>
+                    <h3>Regional Market Knowledge</h3>
+                    <p>15+ years of experience in the GCC region, deeply understanding local business dynamics, regulatory environments, and technology adoption challenges.</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon">👥</div>
+                    <h3>Team Leadership</h3>
+                    <p>Proven ability to build, motivate, and lead high-performing technical teams across multiple geographies, fostering employee satisfaction and delivering exceptional results.</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon">🔄</div>
+                    <h3>Change Management</h3>
+                    <p>Expert in managing organizational transitions when new technologies replace legacy systems, ensuring smooth adoption and maximum value realization from technology investments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credentials Section -->
+    <section class="credentials-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tagline">PROFESSIONAL CREDENTIALS</div>
+                <h2 class="section-title">Education & Certifications</h2>
+            </div>
+
+            <div class="credentials-grid">
+                <div class="credential-category">
+                    <h3>Certifications</h3>
+                    <div class="credential-item">
+                        <p><strong>Certified Management Accountant (CMA)</strong><br>Institute of Management Accountants, USA</p>
+                    </div>
+                </div>
+
+                <div class="credential-category">
+                    <h3>Advanced Education</h3>
+                    <div class="credential-item">
+                        <p><strong>Post Graduate Diploma in Financial Management</strong><br>Narsee Monjee Institute of Management Studies, India</p>
+                    </div>
+                    <div class="credential-item">
+                        <p><strong>Post Graduate Diploma in Investment Analysis</strong><br>ICFAI, India</p>
+                    </div>
+                </div>
+
+                <div class="credential-category">
+                    <h3>Core Skills</h3>
+                    <div class="credential-item">
+                        <p>Strategic Planning</p>
+                    </div>
+                    <div class="credential-item">
+                        <p>Financial Acumen & Analysis</p>
+                    </div>
+                    <div class="credential-item">
+                        <p>Ethical Leadership</p>
+                    </div>
+                </div>
+
+                <div class="credential-category">
+                    <h3>Undergraduate</h3>
+                    <div class="credential-item">
+                        <p><strong>Bachelor of Commerce</strong><br>Mumbai University, India</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Timeline -->
+    <section class="journey-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tagline">PROFESSIONAL JOURNEY</div>
+                <h2 class="section-title">Career Highlights</h2>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-role">Current</div>
+                        <div class="timeline-company">Chief Executive Officer</div>
+                        <div class="timeline-dates">Jan 2020 – Present</div>
+                        <div class="timeline-description">
+                            <strong>NAMA Integrated Solutions LLC</strong><br>
+                            Leading a team of technical professionals to assist businesses with technology transitions. Building an ecosystem of vendors and professionals to deliver integrated solutions that keep businesses aligned with emerging technological landscapes and future-ready.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-role">Tier-1 Software Leadership</div>
+                        <div class="timeline-company">Chief Financial Officer / Head of Operations</div>
+                        <div class="timeline-dates">Feb 2014 – May 2020</div>
+                        <div class="timeline-description">
+                            <strong>Sage Software Middle East FZ LLC</strong><br>
+                            As part of the global executive committee for finance of LSE-listed Sage Group Plc (global market leader in SME business solutions), drove financial excellence, operational improvement, and regional growth while leading high-performing teams.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-role">Strategic Investment</div>
+                        <div class="timeline-company">Executive Director – Investments</div>
+                        <div class="timeline-dates">Apr 2012 – May 2014</div>
+                        <div class="timeline-description">
+                            <strong>Kairos Solutions FZE</strong><br>
+                            Focused on value investing with disciplined portfolio management. Provided CFO services to clients for financial planning and management control improvement.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-role">Portfolio Management</div>
+                        <div class="timeline-company">Investment Manager</div>
+                        <div class="timeline-dates">Jun 2010 – Apr 2012</div>
+                        <div class="timeline-description">
+                            <strong>Delma Investments LLC DIFC</strong><br>
+                            Led analytics team to deliver risk-adjusted returns with long-only approach, managing global equities, commodities, and indices portfolios.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-role">Enterprise Operations</div>
+                        <div class="timeline-company">Business Analyst – Middle East / India</div>
+                        <div class="timeline-dates">Jan 2008 – Oct 2009</div>
+                        <div class="timeline-description">
+                            <strong>Grace Construction Products LLC (NYSE: WR Grace & Co.)</strong><br>
+                            Part of global FP&A leadership team managing Middle East and India operations, with focus on operational efficiency, SOX compliance, and Six Sigma optimization.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section container">
+        <h2>Building the Future of Enterprise Technology</h2>
+        <p>Join NAMA in partnering with leading organizations across the GCC to navigate technology transformation and unlock operational excellence.</p>
+        <button class="btn btn-primary" onclick="alert('Contact us:\n\nEmail: sales@nama-solutions.com\nPhone: +971-4-XXXXX\n\nDubai Office\nUnited Arab Emirates')">Get in Touch</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>NAMA</h4>
+                    <p>Enterprise technology solutions for the GCC region. Consolidating and modernizing IT services across the Middle East.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="index.html">ERP Implementation</a></li>
+                        <li><a href="index.html">Cybersecurity</a></li>
+                        <li><a href="index.html">Cloud Services</a></li>
+                        <li><a href="index.html">CRM & CPQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="index.html">Industry News</a></li>
+                        <li><a href="index.html">Case Studies</a></li>
+                        <li><a href="#">White Papers</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 NAMA Integrated Solutions LLC. All rights reserved. Dubai, UAE.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for logo
+        document.querySelector('.logo').addEventListener('click', function() {
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
