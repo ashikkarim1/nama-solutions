@@ -444,11 +444,17 @@
         /* CTA Section */
         .cta-section {
             background: linear-gradient(135deg, rgba(0, 196, 224, 0.1) 0%, rgba(0, 115, 170, 0.05) 100%);
-            border: 1px solid var(--border-color);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
             padding: 4rem;
-            border-radius: 16px;
             text-align: center;
             margin: 6rem 0;
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
         }
 
         .cta-section h2 {
